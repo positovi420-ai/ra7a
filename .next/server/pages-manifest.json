@@ -1,8 +1,14 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
+  "/api/login": "pages/api/login.js",
+  "/api/logout": "pages/api/logout.js",
   "/api/me": "pages/api/me.js",
-  "/api/people": "pages/api/people.js"
+  "/api/people": "pages/api/people.js",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/reports": "pages/reports.html",
+  "/users": "pages/users.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
