@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { getCurrentUser, logoutClient } from '../lib/storage'
 
 export default function Nav() {
   const [me, setMe] = useState(null)
   const router = useRouter()
 
   useEffect(() => {
-    fetch('/api/me')
-      .then(r => r.json())
-      .then(d => setMe(d.user ? d : null))
-      .catch(() => setMe(null))
+    setMe(getCurrentUser())
   }, [])
 
-  async function logout() {
-    await fetch('/api/logout', { method: 'POST' })
+  function logout() {
+    logoutClient()
+    setMe(null)
     router.push('/login')
   }
 

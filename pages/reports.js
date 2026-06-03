@@ -1,23 +1,15 @@
 import { useEffect, useState } from 'react'
 import Layout from '@/components/Layout'
+import { getCurrentUser, getPeopleData } from '../lib/storage'
 
 export default function Reports() {
   const [people, setPeople] = useState([])
   const [me, setMe] = useState(null)
 
   useEffect(() => {
-    fetch('/api/me')
-      .then(r => r.json())
-      .then(d => setMe(d.user ? d : null))
-      .catch(() => setMe(null))
-    fetchData()
+    setMe(getCurrentUser())
+    setPeople(getPeopleData())
   }, [])
-
-  async function fetchData() {
-    const res = await fetch('/api/people')
-    const data = await res.json()
-    setPeople(data || [])
-  }
 
   function exportCsv() {
     const rows = [
@@ -82,12 +74,12 @@ export default function Reports() {
           <h3>تفاصيل السجلات</h3>
           <div className="report-buttons">
             <button type="button" onClick={exportCsv}>تصدير CSV</button>
-            <button type="button" className="button-secondary" onClick={()=>window.print()}>طباعة PDF</button>
+            <button type="button" className="button-secondary" onClick={() => window.print()}>طباعة PDF</button>
           </div>
         </div>
         <div className="list" style={{ marginTop: 18 }}>
           {people.length === 0 && <div className="muted">لا توجد سجلات حالياً.</div>}
-          {people.map((item, index) => (
+          {people.map((item) => (
             <div key={item.id} className="record-card">
               <div>
                 <strong>{item.name}</strong>
