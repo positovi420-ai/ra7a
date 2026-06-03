@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd75a" />
+      <stop offset="100%" stop-color="#b88d11" />
+    </linearGradient>
+  </defs>
+  <rect width="420" height="120" rx="24" fill="#090909" />
+  <path d="M40 72 C52 56 68 46 90 46 H132 C152 46 168 56 180 74 L192 90 H258 L282 74 C296 58 314 52 334 52 H372 C392 52 408 66 412 86 L416 98 H36 L40 72 Z" fill="url(#goldGrad)" opacity="0.95" />
+  <circle cx="100" cy="94" r="11" fill="#090909" />
+  <circle cx="164" cy="94" r="11" fill="#090909" />
+  <circle cx="268" cy="94" r="11" fill="#090909" />
+  <circle cx="334" cy="94" r="11" fill="#090909" />
+  <text x="210" y="56" font-family="Tahoma, Arial, sans-serif" font-size="32" fill="url(#goldGrad)" font-weight="800">راحة الطريق</text>
+  <text x="210" y="84" font-family="Tahoma, Arial, sans-serif" font-size="15" fill="#e7d8ab">لتأجير السيارات وإدارة العملاء</text>
+</svg>
